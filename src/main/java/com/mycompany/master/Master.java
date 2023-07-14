@@ -45,9 +45,37 @@ class Persona {
 
     public void realizarCirugia() {
         System.out.println("===========================");
+    }   
+}
+ class Deportista extends Persona {
+    private String deporte;
+    private double peso;
+
+    public Deportista(String nombre, int edad, String deporte, double peso) {
+        super(nombre, edad);
+        this.deporte = deporte;
+        this.peso = peso;
     }
-}
-}
+
+    public String getDeporte() {
+        return deporte;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void entrenar() {
+        System.out.println(deporte);
+    }
+
+    public void calcularIMC() {
+        double altura = 1.75;
+        double imc = peso / (altura * altura);
+        System.out.println("Mi IMC es: " + imc);
+    }
+}   
+
 
 public class Master {
     public static void main(String[] args) {
@@ -57,7 +85,13 @@ public class Master {
         System.out.println("Años de experiencia " + doctor.getAñosExperiencia());
         doctor.tratarPaciente();
         doctor.realizarCirugia();
-       
+
+        Deportista deportista = new Deportista("Marta", 28, "Futbol", 65.0);
+        deportista.saludar();
+        System.out.println("Deporte " + deportista.getDeporte());
+        System.out.println("Peso " + deportista.getPeso() + " kg");
+        deportista.entrenar();
+        deportista.calcularIMC();
     }
 
 }

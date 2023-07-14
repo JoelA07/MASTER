@@ -21,6 +21,7 @@ class Persona {
     public void saludar() {
         System.out.println("Hola, soy " + nombre);
     }
+}
     class Doctor extends Persona {
     private String especialidad;
     private int añosExperiencia;
